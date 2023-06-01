@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Task <%= @task.title %> </h1>
+            <%= @task.details %>
+  <br>
+            <%= @task.completed %>
+
+  <br>
+  <%= link_to 'Back to tasks', index_path %>
+  <br>
+  <%= link_to 'Delete task',
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</body>
+</html>
